@@ -29,8 +29,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="0"
                 android:gravity="center"
-                android:text="00.00"
-                android:textColor="@color/colorAccent" />
+                android:textColor="@color/colorAccent"
+                tools:text="00.00" />
 
             <SeekBar
                 android:id="@+id/sbPosition"
@@ -44,8 +44,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="0"
                 android:gravity="center"
-                android:text="00.00"
-                android:textColor="@color/colorAccent" />
+                android:textColor="@color/colorAccent"
+                tools:text="00.00" />
 
         </LinearLayout>
 
@@ -87,11 +87,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Titre de la chanson en lecture"
         android:textColor="@color/colorAccent"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="Titre de la chanson en lecture" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
