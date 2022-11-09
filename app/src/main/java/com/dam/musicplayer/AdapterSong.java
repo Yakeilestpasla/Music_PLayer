@@ -39,7 +39,7 @@ public class AdapterSong extends RecyclerView.Adapter<AdapterSong.viewHolder> {
 
 holder.title.setText(songArrayList.get(position).getSongTitle());
 holder.artist.setText(songArrayList.get(position).getSongArtiste());
-Uri imgUri = songArrayList.get(position).getSongUri();
+Uri imgUri = songArrayList.get(position).getSongCover();
 
 RequestOptions options = new RequestOptions()
         .centerCrop()
@@ -75,6 +75,21 @@ ImageView cover;
             title = itemView.findViewById(R.id.tvTitre);
             artist = itemView.findViewById(R.id.tvArtiste);
             cover = itemView.findViewById(R.id.ivCover);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    onItemClickListener.onItemClick(getAdapterPosition(), view);
+                }
+            });
         }
+    }
+
+    public OnItemClickListener onItemClickListener;
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener){
+        this.onItemClickListener = onItemClickListener;
+    }
+
+    public interface OnItemClickListener {
+        void onItemClick(int pos, View v);
     }
 }
